@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect, useState} from 'react';
+import {Container,Text} from './styles';
+import {resetCss} from './resetCss';
 
+import api from './services/api';
 function App() {
+
+  const [nome,setNome] = useState();
+  useEffect(()=> [
+    api.get('/respo/rocketseat/unform')
+    .then(response=>{
+      setNome(response.data.name);
+    })
+    .catch(e=>console.log(e))
+
+  ],[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <resetCss>
+      <Container>
+        <div className= "div_nome" id="div">
+          <h1>Nome:</h1>
+          <p>{nome}</p>
+        </div>
+        
+      </Container>
+    </resetCss>
+    </>
   );
 }
 

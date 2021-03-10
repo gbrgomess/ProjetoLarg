@@ -1,17 +1,14 @@
-import React,{useState} from 'react';
-//import {Container,Text} from './styles';
-//import {resetCss} from './resetCss';
+import React, {useState} from 'react';
 
-//import api from './services/api';
-function App2() {
 
+function Admin(){
   const [nome,setNome] = useState("Lucas Coronel");
   const [dtNascimento,setdtNascimento] = useState("02/05/1997");
   const [idade,setIdade]=useState(23);
   const [rua,setRua]=useState("Capão Redondo");
   const [numero,setNumero]=useState(200);
-  
-  return (
+
+    return ( 
     <>
         <p>Nome ={nome}</p>
         <p>Data Nascimento = {dtNascimento}</p>
@@ -33,7 +30,13 @@ function App2() {
         
         }}>Mudar</button>
     </>
-  );
+  )
+
+
+
+    
+
 }
 
-export default App2;
+
+export default Admin;

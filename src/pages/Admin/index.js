@@ -43,7 +43,7 @@ function Admin() {
       <br />
       <br />
       <br />
-      <buttons
+      <Buttons
         onClick={() => {
           setNome('Gabriel');
           setdtNascimento('22/04/1998');
